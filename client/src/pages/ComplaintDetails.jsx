@@ -26,7 +26,7 @@ const ComplaintDetails = () => {
         setCurrentUser(user);
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
         
-        const { data } = await axios.get(`http://localhost:5000/api/complaints/${id}`, config);
+        const { data } = await axios.get(`/api/complaints/${id}`, config);
         setComplaint(data);
         setLoading(false);
       } catch (error) {
@@ -48,11 +48,11 @@ const ComplaintDetails = () => {
 
     try {
       const config = { headers: { Authorization: `Bearer ${currentUser.token}` } };
-      await axios.post(`http://localhost:5000/api/complaints/${id}/comment`, { text }, config);
+      await axios.post(`/api/complaints/${id}/comment`, { text }, config);
       
       // Update UI immediately (Optimistic update or re-fetch)
       // Ideally re-fetch to get server timestamp
-      const { data } = await axios.get(`http://localhost:5000/api/complaints/${id}`, config);
+      const { data } = await axios.get(`/api/complaints/${id}`, config);
       setComplaint(data);
       setText('');
     } catch (error) {

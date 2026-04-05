@@ -26,7 +26,7 @@ const Dashboard = () => {
           },
         };
 
-        const { data } = await axios.get('http://localhost:5000/api/complaints', config);
+        const { data } = await axios.get('/api/complaints', config);
         
         // Calculate Stats
         const total = data.length;

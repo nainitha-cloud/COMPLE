@@ -15,7 +15,7 @@ const AdminDashboard = () => {
       const user = JSON.parse(localStorage.getItem('user'));
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
       
-      const { data } = await axios.get('http://localhost:5000/api/complaints', config);
+      const { data } = await axios.get('/api/complaints', config);
       setComplaints(data);
     } catch (error) {
       toast.error('Failed to fetch complaints');
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
       const user = JSON.parse(localStorage.getItem('user'));
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
 
-      await axios.put(`http://localhost:5000/api/complaints/${id}`, { status: newStatus }, config);
+      await axios.put(`/api/complaints/${id}`, { status: newStatus }, config);
       
       toast.success(`Status updated to ${newStatus}`);
       fetchComplaints(); // Refresh list

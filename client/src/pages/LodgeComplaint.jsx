@@ -35,7 +35,7 @@ const LodgeComplaint = () => {
 
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
-      await axios.post('http://localhost:5000/api/complaints', formData, config);
+      await axios.post('/api/complaints', formData, config);
       
       toast.success('Complaint Submitted Successfully!');
       navigate('/dashboard'); 

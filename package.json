@@ -1,0 +1,13 @@
+{
+  "name": "complaintmanagementportal",
+  "version": "1.0.0",
+  "description": "Root package for Render deployment",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

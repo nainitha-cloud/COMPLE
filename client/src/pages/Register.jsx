@@ -28,7 +28,7 @@ const Register = () => {
 
     try {
       // Register the user
-      const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const response = await axios.post('/api/auth/register', formData);
       
       if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data));

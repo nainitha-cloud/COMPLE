@@ -17,7 +17,7 @@ const MyHistory = () => {
       try {
         const user = JSON.parse(localStorage.getItem('user'));
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        const { data } = await axios.get('http://localhost:5000/api/complaints', config);
+        const { data } = await axios.get('/api/complaints', config);
         setComplaints(data);
         setFiltered(data);
       } catch (error) {
